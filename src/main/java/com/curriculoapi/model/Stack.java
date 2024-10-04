@@ -1,20 +1,20 @@
 package com.curriculoapi.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Habilidade {
+@Table(name = "stacks")
+public class Stack {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-
-    @ManyToOne
-    @JoinColumn(name = "curriculo_id")
-    private Curriculo curriculo;
+    private String description;
 }

@@ -2,6 +2,8 @@ package com.curriculoapi.repository;
 
 import com.curriculoapi.model.Stack;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface StacksRepository extends JpaRepository<Stack, Long> {
+@Repository
+public interface StackRepository extends JpaRepository<Stack, Long> {
 }
