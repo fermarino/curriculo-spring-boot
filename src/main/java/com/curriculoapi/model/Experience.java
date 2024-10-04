@@ -1,22 +1,29 @@
 package com.curriculoapi.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Experiencia {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String cargo;
     private String empresa;
+    private String periodo;
     private String descricao;
-    private String dataInicio;
-    private String dataFim;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @JoinColumn(name = "curriculo_id", nullable = false)
+    private Curriculo curriculo;
 }
